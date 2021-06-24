@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <h1 class="text-center py-5">{{title}}</h1>
+
+
+
+    <div class="col-8 m-auto ">
+        <a href="/" class="btn btn-warning  mb-5">Add Student +</a>
+        <table class="table form ">
+            <thead class="thead-dark">
+                <tr>
+                    {{!-- <th scope="row">Id</th> --}}
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Year</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each list}}
+
+
+                <tr class="tr">
+
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.branch}}</td>
+                    <td>{{this.city}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.year}}</td>
+
+
+                    <td>
+                        <a href="/{{this._id}}" class="btn btn-primary">Edit</a>
+                        <a href="/delete/{{this._id}}" class="btn btn-danger">Delete</a>
+                    </td>
+
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
