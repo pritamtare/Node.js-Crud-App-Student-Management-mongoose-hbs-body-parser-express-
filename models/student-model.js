@@ -4,7 +4,12 @@ const studentSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        validate(value){
+            if(value==''){
+              console.log('Field is required')
+            }
+        }
     },
     email :{
         type: String,
@@ -23,12 +28,15 @@ const studentSchema = new mongoose.Schema({
         trim: true
     },
     gender: {
-        // required : true
+   
     },
     year : {
-        // required : true
+      
     }
 })
+
+
+// studentSchema.statics.vaalidate()
 
 const Student = mongoose.model('Student' , studentSchema)
 

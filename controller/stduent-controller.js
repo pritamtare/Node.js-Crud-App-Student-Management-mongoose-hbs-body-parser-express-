@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Student = require('../models/student-model')
 
-router.get('', (req, res)=>{
+router.get('/', (req, res)=>{
     res.render('index',{
         title:"Add New Student"
     })
@@ -37,23 +37,24 @@ function insertRecord(req, res){
 
 function updateRecored(req, res){
     Student.findByIdAndUpdate({_id: req.body._id}, req.body, {new: true}, (err, student)=>{
-        if(!err){
+        try{
             res.redirect('/list')
-        }else{
-            console.log(err)
+        }catch(e){
+            console.log(e)
         }
     })
 }
 
 router.get('/list', (req, res)=>{
     Student.find((err, documents)=>{
-        if(!err){
+        try{
             res.render('list',{
                  list : documents,
                  title: "List Of All Students"
                  })
-        }else{
-            console.log('-------'+ err + '--------  ')
+        }
+       catch(e){
+            console.log(e)
         }
     })
 })
@@ -79,16 +80,27 @@ router.get('/:id', async (req, res) => {
 })
 
 
-router.get('/delete/:id', async (req, res) => {
+router.get('/delete/:id',  (req, res) => {
     Student.findByIdAndRemove(req.params.id, (err) =>{
-        if(!err){
+      try{
             res.redirect('/list')
         }
-        else{
-            console.log(err)
+       catch(e){
+            console.log(e)
         }
     })
 })
+
+
+
+router.get('/list/*',(req, res) =>{
+    res.render('404',{
+        title:  "404 Not Found"
+    })
+})
+
+
+
 
 
 module.exports = router
