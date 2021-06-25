@@ -1,2 +1,2 @@
-# Node.js-Crud-App-Student-Management-mongoose-hbs-body-parser-express-
-Node.js Crud App Student Management(mongoose,hbs,body-parser,express) 
+nodejs-studetent-management-crud-app
+nodejs-studetent-management-crud-app 
