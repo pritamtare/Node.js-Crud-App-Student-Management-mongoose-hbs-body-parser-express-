@@ -14,7 +14,6 @@ router.post('/', async (req, res)=>{
     }else{
         updateRecored(req, res)
     }
-    
 })
 
 function insertRecord(req, res){
@@ -71,7 +70,8 @@ router.get('/:id', async (req, res) => {
         }
         res.render('index',{
             student,
-            title: 'Update Student'
+            title: 'Update Student',
+            btn_name : 'Update Student'
         })
       
     } catch (e) {

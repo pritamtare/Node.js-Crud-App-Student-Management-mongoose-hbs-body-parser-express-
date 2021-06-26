@@ -5,11 +5,6 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        validate(value){
-            if(value==''){
-              console.log('Field is required')
-            }
-        }
     },
     email :{
         type: String,

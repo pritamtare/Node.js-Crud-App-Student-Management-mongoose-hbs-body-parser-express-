@@ -5,14 +5,14 @@
     font-family: sans-serif;
 }
 body{
-    background-color: #ddd;
+    background-color: rgb(255, 253, 253);
 }
 
 .form{
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 .table , .form{
-    background-color: #dde5ee
+    background-color: #b3c6db
 }
 td{
     border-bottom: 1px solid rgb(209, 208, 208);
